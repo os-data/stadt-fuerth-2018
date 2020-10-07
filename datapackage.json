@@ -1,0 +1,360 @@
+{
+  "@context": "http://schemas.frictionlessdata.io/fiscal-data-package.jsonld",
+  "author": "Alexander Hubert",
+  "bytes": 8695736,
+  "cityCode": "Fuerth",
+  "count_of_rows": 66543,
+  "countryCode": "DE",
+  "description": "Haushalt der Stadt FÃ¼rth 2018",
+  "fiscalPeriod": {
+    "end": "2018-12-31",
+    "start": "2018-01-01"
+  },
+  "hash": "a8c56ff28e4e54238dbc2943096bdeb8",
+  "model": {
+    "dimensions": {
+      "administrative-classification": {
+        "attributes": {
+          "einzelplan_bezeichnung_f": {
+            "source": "einzelplan_bezeichnung_f",
+            "title": "Einzelplan|Bezeichnung (F)"
+          },
+          "gliederung_bezeichnung_f": {
+            "parent": "einzelplan_bezeichnung_f",
+            "source": "gliederung_bezeichnung_f",
+            "title": "Gliederung|Bezeichnung (F)"
+          },
+          "gruppierung_bezeichnung_f": {
+            "parent": "gliederung_bezeichnung_f",
+            "source": "gruppierung_bezeichnung_f",
+            "title": "Gruppierung|Bezeichnung (F)"
+          }
+        },
+        "classificationType": "administrative",
+        "dimensionType": "classification",
+        "primaryKey": [
+          "einzelplan_bezeichnung_f",
+          "gliederung_bezeichnung_f",
+          "gruppierung_bezeichnung_f"
+        ]
+      },
+      "budget-line-id": {
+        "attributes": {
+          "id": {
+            "source": "id",
+            "title": "ID"
+          }
+        },
+        "dimensionType": "fact",
+        "primaryKey": [
+          "id"
+        ]
+      },
+      "date": {
+        "attributes": {
+          "jahr": {
+            "source": "jahr",
+            "title": "Jahr"
+          }
+        },
+        "dimensionType": "datetime",
+        "primaryKey": [
+          "jahr"
+        ]
+      },
+      "direction": {
+        "attributes": {
+          "einnahme_ausgabe": {
+            "source": "einnahme_ausgabe",
+            "title": "Einnahme|Ausgabe"
+          }
+        },
+        "dimensionType": "other",
+        "primaryKey": [
+          "einnahme_ausgabe"
+        ]
+      },
+      "fin-source": {
+        "attributes": {
+          "haushalt_art": {
+            "source": "haushalt_art",
+            "title": "Haushalt Art"
+          }
+        },
+        "dimensionType": "other",
+        "primaryKey": [
+          "haushalt_art"
+        ]
+      },
+      "phase": {
+        "attributes": {
+          "ansatz_rechnung": {
+            "source": "ansatz_rechnung",
+            "title": "Ansatz|Rechnung"
+          }
+        },
+        "dimensionType": "other",
+        "primaryKey": [
+          "ansatz_rechnung"
+        ]
+      }
+    },
+    "measures": {
+      "betrag": {
+        "source": "betrag",
+        "title": "Betrag"
+      }
+    }
+  },
+  "name": "stadt_fuerth_2018",
+  "owner": "857dd0a7fcced9c11423b05f3ba2caed",
+  "profile": "data-package",
+  "profiles": {
+    "fiscal": "*",
+    "tabular": "*"
+  },
+  "promise": {
+    "_c": [],
+    "_d": true,
+    "_h": 0,
+    "_n": false,
+    "_s": 1
+  },
+  "regionCode": "eu",
+  "resources": [
+    {
+      "bytes": 6521793,
+      "count_of_rows": 39924,
+      "dialect": {
+        "delimiter": ",",
+        "doubleQuote": true,
+        "lineTerminator": "\r\n",
+        "quoteChar": "\"",
+        "skipInitialSpace": false
+      },
+      "dpp:streamedFrom": "/tmp/tmpj8qz5988/final/data/stadt_furth_2018.csv",
+      "encoding": "utf-8",
+      "format": "csv",
+      "hash": "b9090bda31379daa3c39084aec1aa443",
+      "mediatype": "text/csv",
+      "name": "stadt_furth_2018",
+      "path": "data/stadt_furth_2018.csv",
+      "profile": "data-resource",
+      "schema": {
+        "fields": [
+          {
+            "columnType": "budget-line-id",
+            "conceptType": "budget-line-id",
+            "format": "default",
+            "name": "id",
+            "slug": "id",
+            "title": "ID",
+            "type": "string"
+          },
+          {
+            "columnType": "date:fiscal-year",
+            "conceptType": "date",
+            "format": "default",
+            "name": "jahr",
+            "slug": "jahr",
+            "title": "Jahr",
+            "type": "integer"
+          },
+          {
+            "columnType": "fin-source:generic:code",
+            "conceptType": "fin-source",
+            "format": "default",
+            "name": "haushalt_art",
+            "slug": "haushalt_art",
+            "title": "Haushalt Art",
+            "type": "string"
+          },
+          {
+            "columnType": "administrative-classification:generic:level1:code",
+            "conceptType": "administrative-classification",
+            "format": "default",
+            "name": "einzelplan_bezeichnung_f",
+            "slug": "einzelplan_bezeichnung_f",
+            "title": "Einzelplan|Bezeichnung (F)",
+            "type": "string"
+          },
+          {
+            "columnType": "administrative-classification:generic:level2:code",
+            "conceptType": "administrative-classification",
+            "format": "default",
+            "name": "gliederung_bezeichnung_f",
+            "slug": "gliederung_bezeichnung_f",
+            "title": "Gliederung|Bezeichnung (F)",
+            "type": "string"
+          },
+          {
+            "columnType": "administrative-classification:generic:level3:code",
+            "conceptType": "administrative-classification",
+            "format": "default",
+            "name": "gruppierung_bezeichnung_f",
+            "slug": "gruppierung_bezeichnung_f",
+            "title": "Gruppierung|Bezeichnung (F)",
+            "type": "string"
+          },
+          {
+            "columnType": "direction",
+            "conceptType": "direction",
+            "format": "default",
+            "name": "einnahme_ausgabe",
+            "slug": "einnahme_ausgabe",
+            "title": "Einnahme|Ausgabe",
+            "type": "string"
+          },
+          {
+            "columnType": "value",
+            "conceptType": "value",
+            "decimalChar": ".",
+            "format": "default",
+            "groupChar": "",
+            "name": "betrag",
+            "slug": "betrag",
+            "title": "Betrag",
+            "type": "number"
+          },
+          {
+            "columnType": "phase:id",
+            "conceptType": "phase",
+            "format": "default",
+            "name": "ansatz_rechnung",
+            "slug": "ansatz_rechnung",
+            "title": "Ansatz|Rechnung",
+            "type": "string"
+          }
+        ],
+        "primaryKey": [
+          "id",
+          "jahr",
+          "haushalt_art",
+          "einzelplan_bezeichnung_f",
+          "gliederung_bezeichnung_f",
+          "gruppierung_bezeichnung_f",
+          "einnahme_ausgabe",
+          "ansatz_rechnung"
+        ]
+      }
+    },
+    {
+      "bytes": 4347862,
+      "count_of_rows": 26616,
+      "dialect": {
+        "delimiter": ",",
+        "doubleQuote": true,
+        "lineTerminator": "\r\n",
+        "quoteChar": "\"",
+        "skipInitialSpace": false
+      },
+      "dpp:streamedFrom": "/tmp/tmpj8qz5988/final/data/stadt_furth_2018__2018.csv",
+      "encoding": "utf-8",
+      "format": "csv",
+      "hash": "b9090bda31379daa3c39084aec1aa443",
+      "mediatype": "text/csv",
+      "name": "stadt_furth_2018__2018",
+      "path": "data/stadt_furth_2018__2018.csv",
+      "profile": "data-resource",
+      "schema": {
+        "fields": [
+          {
+            "columnType": "budget-line-id",
+            "conceptType": "budget-line-id",
+            "format": "default",
+            "name": "id",
+            "slug": "id",
+            "title": "ID",
+            "type": "string"
+          },
+          {
+            "columnType": "date:fiscal-year",
+            "conceptType": "date",
+            "format": "default",
+            "name": "jahr",
+            "slug": "jahr",
+            "title": "Jahr",
+            "type": "integer"
+          },
+          {
+            "columnType": "fin-source:generic:code",
+            "conceptType": "fin-source",
+            "format": "default",
+            "name": "haushalt_art",
+            "slug": "haushalt_art",
+            "title": "Haushalt Art",
+            "type": "string"
+          },
+          {
+            "columnType": "administrative-classification:generic:level1:code",
+            "conceptType": "administrative-classification",
+            "format": "default",
+            "name": "einzelplan_bezeichnung_f",
+            "slug": "einzelplan_bezeichnung_f",
+            "title": "Einzelplan|Bezeichnung (F)",
+            "type": "string"
+          },
+          {
+            "columnType": "administrative-classification:generic:level2:code",
+            "conceptType": "administrative-classification",
+            "format": "default",
+            "name": "gliederung_bezeichnung_f",
+            "slug": "gliederung_bezeichnung_f",
+            "title": "Gliederung|Bezeichnung (F)",
+            "type": "string"
+          },
+          {
+            "columnType": "administrative-classification:generic:level3:code",
+            "conceptType": "administrative-classification",
+            "format": "default",
+            "name": "gruppierung_bezeichnung_f",
+            "slug": "gruppierung_bezeichnung_f",
+            "title": "Gruppierung|Bezeichnung (F)",
+            "type": "string"
+          },
+          {
+            "columnType": "direction",
+            "conceptType": "direction",
+            "format": "default",
+            "name": "einnahme_ausgabe",
+            "slug": "einnahme_ausgabe",
+            "title": "Einnahme|Ausgabe",
+            "type": "string"
+          },
+          {
+            "columnType": "value",
+            "conceptType": "value",
+            "decimalChar": ".",
+            "format": "default",
+            "groupChar": "",
+            "name": "betrag",
+            "slug": "betrag",
+            "title": "Betrag",
+            "type": "number"
+          },
+          {
+            "columnType": "phase:id",
+            "conceptType": "phase",
+            "format": "default",
+            "name": "ansatz_rechnung",
+            "slug": "ansatz_rechnung",
+            "title": "Ansatz|Rechnung",
+            "type": "string"
+          }
+        ],
+        "primaryKey": [
+          "id",
+          "jahr",
+          "haushalt_art",
+          "einzelplan_bezeichnung_f",
+          "gliederung_bezeichnung_f",
+          "gruppierung_bezeichnung_f",
+          "einnahme_ausgabe",
+          "ansatz_rechnung"
+        ]
+      }
+    }
+  ],
+  "revision": 0,
+  "title": "stadt_fuerth_2018"
+}
